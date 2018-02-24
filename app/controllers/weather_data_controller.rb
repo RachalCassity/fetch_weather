@@ -1,7 +1,7 @@
 require "net/http"
 
 class WeatherDataController < ApplicationController
-  before_action :set_weather_datum, only: [:show, :create, :update, :destroy]
+  before_action :set_weather_datum, only: [:show, :update, :destroy]
 
   def index
     @weather_data = WeatherDatum.all
@@ -20,11 +20,6 @@ class WeatherDataController < ApplicationController
 
   def create
     @weather_datum = WeatherDatum.new(weather_datum_params)
-
-    if @weather_datum.zipcode
-      @weather_datum.zipcode = WeatherDatum.all(zipcode: @weather_datum.zipcode)
-    end
-
     if @weather_datum.zipcode
       uri = URI("http://api.openweathermap.org/data/2.5/weather")
       uri.query = URI.encode_www_form(zip: @weather_datum.zipcode, appid: ENV['WEATHER_API_KEY'])

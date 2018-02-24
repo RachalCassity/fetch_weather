@@ -42,6 +42,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem 'selenium-webdriver'
   gem "shoulda-matchers"
+  gem "pry"
 end
 
 group :development do
