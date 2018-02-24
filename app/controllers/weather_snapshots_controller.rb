@@ -33,6 +33,13 @@ class WeatherSnapshotsController < ApplicationController
           @weather_snapshot.temperature_f = temperature_kelvin * 9/5 - 459.67
           @weather_snapshot.temperature_c = temperature_kelvin - 273.15
         end
+      else
+        respond_to do |format|
+          format.html { redirect_to new_weather_snapshot_path, error: 'Could not fetch weather data.' }
+          format.json { render json: {} }
+        end
+
+        return
       end
     end
 

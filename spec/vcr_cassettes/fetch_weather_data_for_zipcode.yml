@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=4cda7b936676b031123271279b4301bc&zip=90210
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 24 Feb 2018 06:03:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '445'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?zip=90210"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-118.41,"lat":34.09},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"base":"stations","main":{"temp":282.6,"pressure":1025,"humidity":29,"temp_min":280.15,"temp_max":284.15},"visibility":16093,"wind":{"speed":3.1,"gust":8.7},"clouds":{"all":1},"dt":1519448280,"sys":{"type":1,"id":490,"message":0.0056,"country":"US","sunrise":1519482479,"sunset":1519523160},"id":0,"name":"Beverly
+        Hills","cod":200}'
+    http_version: 
+  recorded_at: Sat, 24 Feb 2018 06:03:47 GMT
+recorded_with: VCR 4.0.0
