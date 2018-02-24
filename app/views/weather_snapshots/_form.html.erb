@@ -1,0 +1,22 @@
+<%= form_with(model: weather_snapshot, local: true) do |form| %>
+  <% if weather_snapshot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(weather_snapshot.errors.count, "error") %> prohibited this weather_snapshot from being saved:</h2>
+
+      <ul>
+      <% weather_snapshot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :zipcode %>
+    <%= form.text_field :zipcode, id: :weather_snapshot_zipcode %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Fetch weather data" %>
+  </div>
+<% end %>

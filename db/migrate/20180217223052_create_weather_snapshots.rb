@@ -1,6 +1,6 @@
-class CreateWeatherData < ActiveRecord::Migration[5.1]
+class CreateWeatherSnapshots < ActiveRecord::Migration[5.1]
   def change
-    create_table :weather_data do |t|
+    create_table :weather_snapshots do |t|
       t.text :zipcode
       t.integer :temperature_f
       t.integer :temperature_c

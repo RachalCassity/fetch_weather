@@ -1,4 +1,4 @@
-class WeatherDatum < ApplicationRecord
+class WeatherSnapshot < ApplicationRecord
   validates :zipcode, presence: true
   validate :presence_of_temperature_data
 

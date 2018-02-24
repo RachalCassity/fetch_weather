@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180217223052) do
 
-  create_table "weather_data", force: :cascade do |t|
+  create_table "weather_snapshots", force: :cascade do |t|
     t.text "zipcode"
     t.integer "temperature_f"
     t.integer "temperature_c"

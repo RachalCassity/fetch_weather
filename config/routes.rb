@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "weather_data#index"
+  root to: "weather_snapshots#index"
 
-  resources :weather_data
+  resources :weather_snapshots
 end

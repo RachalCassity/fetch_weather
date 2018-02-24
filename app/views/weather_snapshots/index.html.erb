@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Weather Snapshot</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+      <th>Zipcode</th>
+      <th>Temperature</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @weather_snapshots.each do |weather_snapshot| %>
+      <tr>
+        <td><%= weather_snapshot.created_at %></td>
+        <td><%= weather_snapshot.zipcode %></td>
+        <td>
+          <%= weather_snapshot.temperature_f %>F /
+          <%= weather_snapshot.temperature_c %>C
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Weather Snapshot', new_weather_snapshot_path %>
